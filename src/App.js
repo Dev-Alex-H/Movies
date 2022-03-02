@@ -1,4 +1,3 @@
-import MoviesGrid from "./components/MoviesGrid";
 import styles from './App.module.css';
 
 import {
@@ -6,18 +5,19 @@ import {
     Route,
     Link,
 } from "react-router-dom";
+import MovieDetails from "./pages/MovieDetails";
+import LandingPage from "./pages/LandingPage";
 
 export default function App() {
     return (
         <div>
             <header>
-                <h1 className={styles.title}>Movies</h1>
-                <Link to="/">Home</Link>
-                <Link to="/ejemplox">Movie</Link>
+                <Link to="/"><h1 className={styles.title}>Movies</h1></Link>
             </header>
             <main>
                 <Routes>
-                    <Route path="/" element={<MoviesGrid />} />
+                    <Route path="/" element={<LandingPage />} />
+                    <Route path="/movies/:movieId" element={<MovieDetails />} />
                 </Routes>
             </main>
         </div>
