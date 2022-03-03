@@ -14,8 +14,8 @@ export default function MovieDetails() {
         setIsLoading(true);
         get(`/movie/${movieId}?`)
             .then(data => {
-                setIsLoading(false);
                 setMovie(data)
+                setIsLoading(false);
             });
     }, [movieId]);
 
@@ -23,7 +23,6 @@ export default function MovieDetails() {
         return <Spinner />;
     }
 
-    console.log(movieId);
     const imageUrl = 'https://image.tmdb.org/t/p/w500' + movie.poster_path;
     return (
         <div className={styles.detailsContainer}>

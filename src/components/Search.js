@@ -4,21 +4,20 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import useQuery from '../hooks/useQuery';
 
-
 export default function Search() {
-    const query = useQuery;
+    const query = useQuery();
     const search = query.get("search");
     const [searchText, setSearchText] = useState("");
     const navigate = useNavigate();
 
     useEffect(() => {
         setSearchText(search || "");
-    }, [search])
+    }, [search]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        navigate(`/?search=${searchText}`);
-    }
+        navigate(`/search=${searchText}`);
+    };
     return (
         <form className={styles.searchContainer} onSubmit={handleSubmit}>
             <div className={styles.searchBox}>

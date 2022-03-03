@@ -5,5 +5,5 @@ export default function Spinner() {
         <div className={Styles.spinner}>
             <FaSpinner className={Styles.spinning} size={60} />
         </div>
-    )
+    );
 }

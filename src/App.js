@@ -18,8 +18,8 @@ export default function App() {
                 </header>
                 <main>
                     <Routes>
-                        <Route path="/" element={<LandingPage />} />
                         <Route path="/movies/:movieId" element={<MovieDetails />} />
+                        <Route path="/" element={<LandingPage />} />
                     </Routes>
                 </main>
             </BrowserRouter>
