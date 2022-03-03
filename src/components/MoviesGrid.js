@@ -3,14 +3,15 @@ import styles from './MovieGrid.module.css';
 import { useEffect, useState } from 'react';
 import get from '../utils/httpClient';
 import Spinner from './Spinner';
-import useQuery from '../hooks/useQuery';
+// import useQuery from '../hooks/useQuery';
 import { getSearch } from '../utils/httpSearch';
+import { useSearchParams } from 'react-router-dom';
 
 export default function MoviesGrid() {
     const [movies, setMovies] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
-    const query = useQuery();
-    const search = query.get("search"); //aquí está la palabra que buscamos
+    const [query, setQuery] = useSearchParams();
+    const search = query.get("search" ?? "");
 
     useEffect(() => {
         setIsLoading(true);
