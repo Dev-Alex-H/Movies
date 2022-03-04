@@ -22,7 +22,7 @@ export default function MoviesGrid() {
                     setIsLoading(false);
                 });
         } else {
-            get('/discover/movie?').then(data => {
+            get('/discover/movie?sort_by=popularity.desc&').then(data => {
                 setMovies(data.results);
                 setIsLoading(false);
             }

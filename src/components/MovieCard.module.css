@@ -2,6 +2,7 @@
     list-style: none;
     font-size: 1.5rem;
     text-align: center;
+    cursor: pointer;
 }
 
 .movieCard:hover {
@@ -12,12 +13,12 @@
     border-radius: 10px;
     background-color: azure;
     width: 230px;
-    height: 345;
+    height: 345px;
 }
 
 @media (max-width: 560px) {
     .movieImage {
-        width: 90%;
+        width: 80%;
         height: auto;
     }
 }
