@@ -4,7 +4,7 @@ import Search from "../components/Search";
 import useDebounce from "../hooks/useDebounce";
 
 export default function LandingPage() {
-    const [query, setQuery] = useSearchParams();
+    const [query] = useSearchParams();
     const search = query.get("search") ?? "";
 
     const debouncedSearch = useDebounce(search, 300)
