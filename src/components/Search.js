@@ -1,7 +1,6 @@
 import styles from './Search.module.css';
 import { FaSearch } from 'react-icons/fa';
 import { useSearchParams } from 'react-router-dom';
-// import { getSearch } from '../utils/httpSearch';
 
 export default function Search() {
     const [query, setQuery] = useSearchParams();
@@ -9,7 +8,6 @@ export default function Search() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // getSearch(search);
     };
     return (
         <form className={styles.searchContainer} onSubmit={handleSubmit}>
@@ -17,9 +15,9 @@ export default function Search() {
                 <input
                     className={styles.searchInput}
                     type="text"
-                    value={search ?? ""}
+                    value={search}
                     autoFocus
-                    placeholder='Search'
+                    placeholder='Movie title'
                     aria-label='Search Movies'
                     onChange={(e) => {
                         const value = e.target.value;
@@ -27,9 +25,7 @@ export default function Search() {
                         setQuery({ search: value });
                     }}
                 />
-                <button className={styles.searchButton} type="submit">
-                    <FaSearch size={20} />
-                </button>
+                <FaSearch className={styles.searchButton} size={20} />
             </div>
         </form>
     )

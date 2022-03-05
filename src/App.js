@@ -13,7 +13,7 @@ export default function App() {
     return (
         <div>
             <BrowserRouter>
-                <header>
+                <header className={styles.header_title}>
                     <Link to="/"><h1 className={styles.title}>Movies</h1></Link>
                 </header>
                 <main>
