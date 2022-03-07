@@ -4,12 +4,13 @@ import Spinner from '../components/Spinner';
 import get from '../utils/httpClient';
 import styles from './MovieDetails.module.css';
 import getMovieImg from '../utils/getMovieImg';
+import backgroundDefault from '../images/backgroundDefault.jpg';
 
 export default function MovieDetails() {
     const { movieId } = useParams();
     const [isLoading, setIsLoading] = useState(true);
-    const [movie, setMovie] = useState(null);
-
+    const [movie, setMovie] = useState({});
+    const background = movie.backdrop_path ? getMovieImg(movie.backdrop_path) : backgroundDefault;
 
     useEffect(() => {
         setIsLoading(true);
@@ -27,11 +28,11 @@ export default function MovieDetails() {
     const imageUrl = getMovieImg(movie.poster_path);
     return (
         <div className={styles.detailsContainer}>
-            <div style={{ backgroundImage: `url(${getMovieImg(movie.backdrop_path)})` }}>
+            <div className={styles.detailsBackground} style={{ backgroundImage: `url(${background})` }}>
             </div>
-            <div>
+            <div className={styles.detailsInfo} >
                 <img className={`${styles.col} ${styles.movieImage}`} src={imageUrl} alt={movie.title} />
-                <div className={`${styles.col} ${styles.movieDetails}`}>
+                <div className={`${styles.col}`}>
                     <p className={styles.firstItem}><strong>Title:</strong> {movie.title}</p>
                     <p>
                         <strong>Genres: </strong>{movie.genres.map(el => el.name).join(', ')}

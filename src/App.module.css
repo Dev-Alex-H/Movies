@@ -1,7 +1,9 @@
 .header_title {
+    position: relative;
     width: 100%;
     display: flex;
     justify-content: center;
+    z-index: 10000;
 }
 
 .title {
