@@ -5,6 +5,7 @@ import {
     Route,
     Link,
     BrowserRouter,
+    Navigate,
 } from "react-router-dom";
 import MovieDetails from "./pages/MovieDetails";
 import LandingPage from "./pages/LandingPage";
@@ -20,6 +21,7 @@ export default function App() {
                     <Routes>
                         <Route path="/movies/:movieId" element={<MovieDetails />} />
                         <Route path="/" element={<LandingPage />} />
+                        <Route path='*' element={<Navigate replace to='/' />} />
                     </Routes>
                 </main>
             </BrowserRouter>

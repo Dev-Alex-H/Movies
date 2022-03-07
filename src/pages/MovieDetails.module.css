@@ -2,7 +2,17 @@
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    opacity: .2;
 }
+
+.detailsBackground {
+    position: relative;
+}
+
+.detailsInfo {}
 
 .col {
     width: 80%;
