@@ -5,12 +5,21 @@ import get from '../utils/httpClient';
 import styles from './MovieDetails.module.css';
 import getMovieImg from '../utils/getMovieImg';
 import backgroundDefault from '../images/backgroundDefault.jpg';
+import Ratings from '../components/Ratings';
 
 export default function MovieDetails() {
     const { movieId } = useParams();
     const [isLoading, setIsLoading] = useState(true);
     const [movie, setMovie] = useState({});
     const background = movie.backdrop_path ? getMovieImg(movie.backdrop_path) : backgroundDefault;
+
+    const [value, updateValue] = useState(true);
+    const claseParrafo = value === true ? styles.parrafoHiden : styles.parrafoCompleto;
+    const masMenos = value === true ? '... more' : 'less';
+
+    function onHandleClick() {
+        updateValue(!value);
+    }
 
     useEffect(() => {
         setIsLoading(true);
@@ -37,8 +46,13 @@ export default function MovieDetails() {
                     <p>
                         <strong>Genres: </strong>{movie.genres.map(el => el.name).join(', ')}
                     </p>
-                    <p><strong>Description:</strong> {movie.overview}</p>
+                    <p><strong>Ratings:</strong> {<Ratings rating={movie.vote_average} />} {movie.vote_average / 2}</p>
+                    <p className={claseParrafo}><strong>Description:</strong> {movie.overview}</p>
+                    <p onClick={onHandleClick} className={styles.masInf}><strong>{masMenos}</strong></p>
                 </div>
+            </div>
+            <div className={styles.detailsRecomended}>
+                Recomended for you
             </div>
         </div>
     );

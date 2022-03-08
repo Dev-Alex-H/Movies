@@ -33,7 +33,6 @@
 }
 
 .movieImage {
-    margin-right: -150px;
     width: 300px;
     height: fit-content;
     border-radius: 15px;
@@ -41,6 +40,31 @@
 
 .firstItem {
     margin-top: 0;
+}
+
+.parrafoHiden {
+    margin-top: 0;
+    max-height: 90px;
+    overflow-y: hidden;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.parrafoCompleto {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.masInf {
+    font-size: larger;
+    cursor: pointer;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.detailsRecomended {
+    font-size: 1.5rem;
 }
 
 @media (max-width: 560px) {
@@ -54,6 +78,7 @@
 
     .movieImage {
         width: 250px;
+        margin-right: 0px;
     }
 }
 
