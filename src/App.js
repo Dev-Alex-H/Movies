@@ -15,7 +15,7 @@ export default function App() {
         <div>
             <BrowserRouter>
                 <header className={styles.header_title}>
-                    <Link to="/"><h1 className={styles.title}>Movies</h1></Link>
+                    <Link to="/"><h1 className={styles.title}>Info Movies</h1></Link>
                 </header>
                 <main>
                     <Routes>

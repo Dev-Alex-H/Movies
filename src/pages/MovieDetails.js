@@ -6,6 +6,7 @@ import styles from './MovieDetails.module.css';
 import getMovieImg from '../utils/getMovieImg';
 import backgroundDefault from '../images/backgroundDefault.jpg';
 import Ratings from '../components/Ratings';
+import Recommended from '../components/Recommended';
 
 export default function MovieDetails() {
     const { movieId } = useParams();
@@ -51,9 +52,7 @@ export default function MovieDetails() {
                     <p onClick={onHandleClick} className={styles.masInf}><strong>{masMenos}</strong></p>
                 </div>
             </div>
-            <div className={styles.detailsRecomended}>
-                Recomended for you
-            </div>
+            <Recommended idActual={movieId} />
         </div>
     );
 }
