@@ -42,6 +42,11 @@
     margin-top: 0;
 }
 
+.ratingContent {
+    display: flex;
+    margin-bottom: 4%;
+}
+
 .parrafoHiden {
     margin-top: 0;
     max-height: 65px;

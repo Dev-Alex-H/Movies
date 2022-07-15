@@ -1,22 +1,18 @@
-import styles from './App.module.css';
-
 import {
     Routes,
     Route,
-    Link,
     BrowserRouter,
     Navigate,
 } from "react-router-dom";
 import MovieDetails from "./pages/MovieDetails";
 import LandingPage from "./pages/LandingPage";
+import Header from './components/Header';
 
 export default function App() {
     return (
         <div>
             <BrowserRouter>
-                <header className={styles.header_title}>
-                    <Link to="/"><h1 className={styles.title}>Info Movies</h1></Link>
-                </header>
+                <Header />
                 <main>
                     <Routes>
                         <Route path="/movies/:movieId" element={<MovieDetails />} />

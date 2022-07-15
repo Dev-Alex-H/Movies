@@ -1,6 +1,15 @@
-.spinner {
+.ratingContent {
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-width: 70px;
+    max-width: 200px;
+    justify-content: end;
+    padding-right: 5px;
+    margin-left: 10px;
 }
 
-.spinning {}
+.ratingNumber {
+    text-align: end;
+    padding-right: 6px;
+}

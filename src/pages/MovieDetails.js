@@ -47,7 +47,7 @@ export default function MovieDetails() {
                     <p>
                         <strong>Genres: </strong>{movie.genres.map(el => el.name).join(', ')}
                     </p>
-                    <p><strong>Ratings:</strong> {<Ratings rating={movie.vote_average} />} {movie.vote_average / 2}</p>
+                    <div className={styles.ratingContent}><strong>Ratings: </strong> {<Ratings rating={movie.vote_average} />}</div>
                     <p className={claseParrafo}><strong>Description:</strong> {movie.overview}</p>
                     <p onClick={onHandleClick} className={styles.masInf}><strong>{masMenos}</strong></p>
                 </div>
@@ -55,4 +55,4 @@ export default function MovieDetails() {
             <Recommended idActual={movieId} />
         </div>
     );
-}
+} 

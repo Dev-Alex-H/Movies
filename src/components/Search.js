@@ -28,5 +28,5 @@ export default function Search() {
                 <FaSearch className={styles.searchButton} size={20} />
             </div>
         </form>
-    )
+    );
 }
