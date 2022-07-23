@@ -1,6 +1,6 @@
 import styles from './Header.module.css';
 import { Link } from 'react-router-dom';
-import Search from './Search';
+import Search from '../Search/Search';
 import { FaFilm } from 'react-icons/fa';
 
 export default function Header() {

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import get from "../utils/httpClient";
-import Slider from "./Slider";
+import get from "../../utils/httpClient";
+import Slider from "../Slider/Slider";
 import styles from './Recommended.module.css';
 
 export default function Recommended(movieId) {

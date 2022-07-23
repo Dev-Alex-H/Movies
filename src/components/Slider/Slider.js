@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
-import MovieCard from "./MovieCard";
 import styles from './Slider.module.css';
+import MovieCard from "../MovieCard/MovieCard";
 
 export default function Slider({ movies }) {
     const width = movies.length * 265;

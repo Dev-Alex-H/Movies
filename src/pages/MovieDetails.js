@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Spinner from '../components/Spinner';
+import Spinner from '../components/Spinner/Spinner';
 import get from '../utils/httpClient';
 import styles from './MovieDetails.module.css';
 import getMovieImg from '../utils/getMovieImg';
 import backgroundDefault from '../images/backgroundDefault.jpg';
-import Ratings from '../components/Ratings';
-import Recommended from '../components/Recommended';
+import Ratings from '../components/Ratings/Ratings';
+import Recommended from '../components/Recommended/Recommended';
 
 export default function MovieDetails() {
     const { movieId } = useParams();

@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import MovieDetails from "./pages/MovieDetails";
 import LandingPage from "./pages/LandingPage";
-import Header from './components/Header';
+import Header from './components/Header/Header';
 
 export default function App() {
     return (

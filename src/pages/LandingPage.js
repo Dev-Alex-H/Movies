@@ -1,5 +1,5 @@
 import { useSearchParams } from "react-router-dom";
-import MoviesGrid from "../components/MoviesGrid";
+import MoviesGrid from "../components/MoviesGrid/MoviesGrid";
 import useDebounce from "../hooks/useDebounce";
 
 export default function LandingPage() {
