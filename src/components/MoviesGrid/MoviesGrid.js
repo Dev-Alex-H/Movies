@@ -16,6 +16,7 @@ export default function MoviesGrid({ search }) {
     useEffect(() => {
         setIsLoading(true);
         if (search) {
+            console.log(search);
             getSearch(search)
                 .then(data => {
                     setMovies((prevMovies) => prevMovies.concat(data.results));
@@ -23,7 +24,7 @@ export default function MoviesGrid({ search }) {
                     setIsLoading(false);
                 });
         } else {
-            get('/discover/movie?sort_by=popularity.desc&', `&page=${page}`).then(data => {
+            get('/discover/movie?', `&sort_by=popularity.desc&page=${page}`).then(data => {
                 setMovies((prevMovies) => prevMovies.concat(data.results));
                 setIsLoading(false);
             }
